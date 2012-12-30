@@ -2,19 +2,19 @@ function server
 	ssh julian@new.j12d.de
 end
 
+# ssh as SOCKS proxy through 443
 function tunnel
 	networksetup -setsocksfirewallproxystate Wi-Fi on;ssh julian@j12d.de -D 8080 -p 443
 end
-
-#Networknames: networksetup -listnetworkserviceorder
 function closetunnel
 	networksetup -setsocksfirewallproxystate Wi-Fi off
 end
 
+#Netflix!
+#Networknames: networksetup -listnetworkserviceorder
 function usatunnel
     networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23;
 end
-
 function closeusatunnel
     networksetup -setdnsservers "Wi-Fi" empty;
 end
