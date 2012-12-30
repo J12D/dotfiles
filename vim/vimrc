@@ -1,3 +1,5 @@
+set nocompatible " Don't emulate vi bugs
+
 " Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -10,7 +12,8 @@ filetype plugin indent on
 set shell=/bin/bash
 
 " Powerline settings
-set nocompatible
 set laststatus=2
 set t_Co=256
 let g:Powerline_symbols='fancy'
+
+set backspace=2 " make backspace work like most other apps
