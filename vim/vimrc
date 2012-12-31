@@ -4,9 +4,12 @@ set nocompatible " Don't emulate vi bugs
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-"Syntax highlighting
-syntax on
+" Color/Syntax highlighting
+syntax enable
 filetype plugin indent on
+set background=dark
+colorscheme solarized
+
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
