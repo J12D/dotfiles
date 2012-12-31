@@ -3,4 +3,4 @@
 	email = j12d@me.com
 
 [color]
-	ui = true
+	ui = auto 
