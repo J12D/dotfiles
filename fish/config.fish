@@ -4,19 +4,19 @@ end
 
 # ssh as SOCKS proxy through 443
 function tunnel
-	networksetup -setsocksfirewallproxystate Wi-Fi on;ssh julian@j12d.de -D 8080 -p 443
+	sudo networksetup -setsocksfirewallproxystate Wi-Fi on;ssh julian@j12d.de -D 8080 -p 443
 end
 function closetunnel
-	networksetup -setsocksfirewallproxystate Wi-Fi off
+	sudo networksetup -setsocksfirewallproxystate Wi-Fi off
 end
 
 #Netflix!
 #Networknames: networksetup -listnetworkserviceorder
 function usatunnel
-    networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23;
+    sudo networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23;
 end
 function closeusatunnel
-    networksetup -setdnsservers "Wi-Fi" empty;
+    sudo networksetup -setdnsservers "Wi-Fi" empty;
 end
 
 function ips
