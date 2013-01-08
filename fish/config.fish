@@ -28,11 +28,11 @@ function myip
 end
 
 function gs
-	git status
+	git status $argv
 end
 
 function gd
-    git diff
+    git diff $argv
 end
 
 function push
@@ -44,7 +44,11 @@ function pull
 end
 
 function gc
-	git commit
+	git commit $argv
+end
+
+function gl
+    git log $argv
 end
 
 function ll
