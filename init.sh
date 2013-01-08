@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Symlink the files/folders to appropriate locations 
 ln -s ~/dotfiles/vim ~/.vim           
