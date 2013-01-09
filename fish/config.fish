@@ -1,5 +1,6 @@
 function server
-	ssh julian@new.j12d.de
+    mosh j12d@dorado.uberspace.de -p 50804
+    #	ssh julian@new.j12d.de
 end
 
 # ssh as SOCKS proxy through 443
