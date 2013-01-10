@@ -1,5 +1,7 @@
 set nocompatible " Don't emulate vi bugs
 
+set encoding=utf-8
+
 " Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -28,3 +30,6 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Display line numbers
+set nu
