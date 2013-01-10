@@ -12,8 +12,10 @@ filetype plugin indent on
 set background=dark
 colorscheme solarized
 
-" NERDTree Toggling
-nmap <silent> <C-A> :NERDTreeToggle<CR>
+" NERDTree 
+nmap <silent> <C-N> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "Close Vim if NERDTree is the only open window
+
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
