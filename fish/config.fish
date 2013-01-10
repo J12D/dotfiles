@@ -28,6 +28,10 @@ function myip
 	dig +short myip.opendns.com @resolver1.opendns.com
 end
 
+function calc
+    echo $argv | bc
+end
+
 function gs
 	git status $argv
 end
