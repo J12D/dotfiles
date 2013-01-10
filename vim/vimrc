@@ -11,7 +11,7 @@ set background=dark
 colorscheme solarized
 
 " NERDTree Toggling
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <C-A> :NERDTreeToggle<CR>
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
