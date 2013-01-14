@@ -28,6 +28,10 @@ function myip
 	dig +short myip.opendns.com @resolver1.opendns.com
 end
 
+function sniff
+    sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+end
+
 function calc
     echo $argv | bc
 end
