@@ -16,6 +16,8 @@ colorscheme solarized
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "Close Vim if NERDTree is the only open window
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
