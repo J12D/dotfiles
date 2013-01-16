@@ -37,3 +37,7 @@ set expandtab
 
 " Display line numbers
 set nu
+
+" Move easier between Tabs
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
