@@ -18,6 +18,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_sort = 0 "sort tags according to order in source
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
