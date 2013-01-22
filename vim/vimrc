@@ -20,7 +20,7 @@ nmap <leader><Space> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "Close Vim if NERDTree is the only open window
 
 " Tagbar
-nmap <leader><l> :TagbarToggle<CR>
+nmap <leader>l :TagbarToggle<CR>
 let g:tagbar_sort = 0 "sort tags according to order in source
 
 " Set Shell to bash so fugitive behaves nicely
