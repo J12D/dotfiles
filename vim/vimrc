@@ -36,6 +36,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set colorcolumn=80 "highlight col 80
+
+" Search
+set ignorecase " ignore cases
+set smartcase  " unless the string contains uppercase letters
+set incsearch  " search while typing
+
 " Display line numbers
 set nu
 
