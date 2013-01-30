@@ -52,3 +52,11 @@ set nu
 " Move easier between Tabs
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
+
+" LaTeX-Box
+nmap <leader>t :Latexmk<CR>
+nmap <leader>ts :LatexmkStop<CR>
+nmap <leader>tc :LatexmkClean<CR>
+let g:Tex_CompileRule_pdf = 'latexmk -pdf' "compile to pdf
+imap <buffer> [[ \begin{
+imap <buffer> ]] <Plug>LatexCloseCurEnv
