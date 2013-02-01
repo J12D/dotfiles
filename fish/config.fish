@@ -18,9 +18,11 @@ end
 # ssh as SOCKS proxy, 443 had to be dropped
 function tunnel
   sudo networksetup -setsocksfirewallproxystate Wi-Fi on;
+  sudo networksetup -setsocksfirewallproxystate Ethernet on;
   ssh j12d@dorado.uberspace.de -D 8080
 end
 function closetunnel
+  sudo networksetup -setsocksfirewallproxystate Ethernet off;
 	sudo networksetup -setsocksfirewallproxystate Wi-Fi off
 end
 
