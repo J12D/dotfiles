@@ -53,6 +53,11 @@ set nu
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 
+" Mappings for fugitive
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gd :Gdiff<CR>
+
 " LaTeX-Box
 nmap <leader>t :Latexmk<CR>
 nmap <leader>ts :LatexmkStop<CR>
