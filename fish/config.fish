@@ -4,14 +4,21 @@ function hiderootfiles
     end
 end
 
+function renamerootpdfs
+  for i in *-Ac*.pdf
+    mv $i (echo $i | sed 's/^.\{16\}//')
+  end
+end
+
 function server
     mosh j12d@dorado.uberspace.de -p 50804
     #	ssh julian@new.j12d.de
 end
 
-# ssh as SOCKS proxy through 443
+# ssh as SOCKS proxy, 443 had to be dropped
 function tunnel
-	sudo networksetup -setsocksfirewallproxystate Wi-Fi on;ssh julian@j12d.de -D 8080 -p 443
+  sudo networksetup -setsocksfirewallproxystate Wi-Fi on;
+  ssh j12d@dorado.uberspace.de -D 8080
 end
 function closetunnel
 	sudo networksetup -setsocksfirewallproxystate Wi-Fi off
