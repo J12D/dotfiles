@@ -69,13 +69,5 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gd :Gdiff<CR>
 
-" LaTeX-Box
-nmap <leader>t :Latexmk<CR>
-nmap <leader>ts :LatexmkStop<CR>
-nmap <leader>tc :LatexmkClean<CR>
-let g:Tex_CompileRule_pdf = 'latexmk -pdf' "compile to pdf
-"let g:Tex_ViewRule_pdf = 'Skim'
-let g:LatexBox_viewer = 'Skim'
-let g:LatexBox_latexmk_options = '-pvc'
-imap <buffer> [[ \begin{
-imap <buffer> ]] <Plug>LatexCloseCurEnv
+" vim-easymotion
+let g:EasyMotion_leader_key = '<Leader>'
