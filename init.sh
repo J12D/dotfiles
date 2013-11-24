@@ -10,3 +10,4 @@ ln -s ~/dotfiles/tmux/tmux.conf .tmux.conf
 ln -s ~/dotfiles/tmux/tmux .tmux
 
 git submodule init && git submodule update
+vim +BundleInstall +qall
