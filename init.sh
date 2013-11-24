@@ -11,3 +11,4 @@ ln -s ~/dotfiles/tmux/tmux .tmux
 
 git submodule init && git submodule update
 vim +BundleInstall +qall
+open ~/dotfiles/vim/Monaco_Linux-Powerline.ttf
