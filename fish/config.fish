@@ -89,7 +89,6 @@ set PATH /usr/local/git/bin $PATH
 set PATH /usr/local/sbin $PATH
 set PATH /usr/sbin $PATH
 set PATH /usr/local/bin $PATH
-set PATH /usr/local/share/python $PATH
 
 set CLICOLOR = "YES" 
 set LSCOLORS = cxfxcxdxbxegedabagacad
