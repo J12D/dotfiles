@@ -10,6 +10,10 @@ function renamerootpdfs
   end
 end
 
+function cleanLaTeX
+  rm {*.aux,*.synctex.gz,*.log}
+end
+
 function server
     mosh j12d@dorado.uberspace.de -p 50804
     #	ssh julian@new.j12d.de
@@ -29,10 +33,16 @@ end
 #Netflix!
 #Networknames: networksetup -listnetworkserviceorder
 function usatunnel
-    sudo networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23;
+    if cat ~/dotfiles/fish/jdpw | sudo -S networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23 > /dev/null
+        echo Changed DNS-Server to (cat ~/dotfiles/fish/jdpw | sudo -S networksetup -getdnsservers "Wi-Fi")
+    end
+    echo Activating new IP adress: (myip) &
+    curl -g (echo -n "https://api.unblock-us.com/login?" | cat - ~/dotfiles/fish/ub-us-pw)
 end
 function closeusatunnel
-    sudo networksetup -setdnsservers "Wi-Fi" empty;
+    if cat ~/dotfiles/fish/jdpw | sudo -S networksetup -setdnsservers "Wi-Fi" empty;
+        echo Changed DNS-Server to router default
+    end
 end
 
 function ips
