@@ -1,11 +1,10 @@
 set nocompatible
+filetype off
 
 " Load Vundle
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
-" let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
 Bundle 'scrooloose/nerdtree'
@@ -17,11 +16,8 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'lervag/vim-latex'
 
-" Disabled Plugins (for now)
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'spf13/vim-autoclose'
-"Bundle 'toyamarinyon/vim-swift'
-"Bundle 'majutsushi/tagbar'
+call vundle#end()
+filetype plugin indent on
 
 " Color/Syntax highlighting
 syntax enable
@@ -32,7 +28,6 @@ set encoding=utf-8
 set background=dark
 colorscheme solarized
 
-" Set tab width to 4 spaces
 set autoindent
 set expandtab
 set smarttab
@@ -42,9 +37,7 @@ set shiftwidth=2
 set foldmethod=syntax
 set foldlevel=99
 
-set colorcolumn=80 "highlight col 80
-
-set backspace=indent,eol,start " make backspace work like most other apps
+set backspace=indent,eol,start "make backspace work like most other apps
 
 " Search
 set ignorecase " ignore cases
@@ -57,9 +50,6 @@ set nu
 " NERDTree 
 let NERDTreeIgnore = ['\.pyc']
 let NERDTreeHijackNetrw=0
-
-"" Tagbar
-"let g:tagbar_sort = 0 "sort tags according to order in source
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
@@ -78,11 +68,9 @@ let mapleader = ','
 
 nmap <leader><Space> :NERDTreeToggle<CR>
 
-"nmap <leader>l :TagbarToggle<CR>
-
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gd :Gdiff<CR>
 
-"" vim-easymotion
-"let g:EasyMotion_leader_key = '<Leader>'
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'

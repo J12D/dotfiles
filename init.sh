@@ -10,5 +10,6 @@ ln -s ~/dotfiles/tmux/tmux.conf .tmux.conf
 ln -s ~/dotfiles/tmux/tmux .tmux
 
 git submodule init && git submodule update
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +BundleInstall +qall
 open ~/dotfiles/vim/Monaco_Linux-Powerline.ttf
