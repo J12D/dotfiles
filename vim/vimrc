@@ -14,7 +14,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'lervag/vim-latex'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'tell-k/vim-autopep8'
+Bundle 'davidhalter/jedi-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -48,8 +50,7 @@ set incsearch  " search while typing
 set nu
 
 " NERDTree 
-let NERDTreeIgnore = ['\.pyc']
-let NERDTreeHijackNetrw=0
+let NERDTreeHijackNetrw=1
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
@@ -65,6 +66,7 @@ map  <C-h> :tabp<CR>
 
 " Leader maps
 let mapleader = ','
+let maplocalleader = ','
 
 nmap <leader><Space> :NERDTreeToggle<CR>
 
@@ -72,5 +74,10 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gd :Gdiff<CR>
 
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
+let g:LatexBox_viewer='open -a Skim'
+let g:LatexBox_quickfix=4
+
+imap <buffer> [[     \begin{
+imap <buffer> ]]     <Plug>LatexCloseCurEnv
+nmap <leader>li diwi\textit{<ESC>pi<Right>}
+nmap <leader>lb diwi\textbf{<ESC>pi<Right>}
