@@ -17,6 +17,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'klen/python-mode'
 
 call vundle#end()
 filetype plugin indent on
