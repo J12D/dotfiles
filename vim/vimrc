@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set guifont=Menlo\ for\ Powerline
 
 " Load Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -7,9 +8,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
@@ -50,16 +52,17 @@ set incsearch  " search while typing
 " Display line numbers
 set nu
 
-" NERDTree 
-let NERDTreeHijackNetrw=1
+" Airline
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+set laststatus=2
+set t_Co=256
+
+" Tagbar
+nmap <leader>. :TagbarToggle<CR>
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
-
-" Powerline settings
-set laststatus=2
-set t_Co=256
-let g:Powerline_symbols='fancy'
 
 " Move easier between Tabs
 map  <C-l> :tabn<CR>
