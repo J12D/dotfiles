@@ -81,3 +81,7 @@ imap <buffer> [[     \begin{
 imap <buffer> ]]     <Plug>LatexCloseCurEnv
 nmap <leader>li diwi\textit{<ESC>pi<Right>}
 nmap <leader>lb diwi\textbf{<ESC>pi<Right>}
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
