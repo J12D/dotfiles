@@ -99,6 +99,12 @@ set PATH /usr/local/git/bin $PATH
 set PATH /usr/local/sbin $PATH
 set PATH /usr/sbin $PATH
 set PATH /usr/local/bin $PATH
+set PATH $PATH $HOME/work/bin
+
+export GOPATH=$HOME/work
+
+set VISUAL /usr/local/bin/vim
+set EDITOR $VISUAL
 
 set CLICOLOR = "YES" 
 set LSCOLORS = cxfxcxdxbxegedabagacad
