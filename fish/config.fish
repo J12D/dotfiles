@@ -81,6 +81,13 @@ function gc
 	git commit $argv
 end
 
+function git_cleanindex
+  if git rev-parse
+    find . -type f -name "* Konflikt*" -exec rm -f {} \;
+    awk '!/Konflikt/' .git/packed-refs > temp & mv temp .git/packed-refs
+  end
+end
+
 function gl
     git log $argv
 end
