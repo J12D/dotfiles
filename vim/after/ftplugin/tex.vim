@@ -10,3 +10,8 @@ function! WC()
 endfunction
 
 command! WC call WC()
+
+imap <buffer> \begin{     \begin{
+imap <buffer> <Plug>LatexCloseCurEnv     <Plug>LatexCloseCurEnv
+nmap <leader>li diwi\textit{<ESC>pi<Right>} 
+nmap <leader>lb diwi\textbf{<ESC>pi<Right>} 
