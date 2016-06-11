@@ -84,8 +84,6 @@ nmap <leader>gd :Gdiff<CR>
 let g:LatexBox_viewer='open -a Skim'
 let g:LatexBox_quickfix=4
 
-imap <buffer> [[     \begin{
-imap <buffer> ]]     <Plug>LatexCloseCurEnv
 nmap <leader>li diwi\textit{<ESC>pi<Right>}
 nmap <leader>lb diwi\textbf{<ESC>pi<Right>}
 
