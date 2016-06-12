@@ -13,5 +13,6 @@ command! WC call WC()
 
 imap <buffer> [[ \begin{
 imap <buffer> ]] <Plug>LatexCloseCurEnv
+nmap <leader>ce <Plug>LatexChangeEnv 
 nmap <leader>li diwi\textit{<ESC>pi<Right>} 
 nmap <leader>lb diwi\textbf{<ESC>pi<Right>} 
