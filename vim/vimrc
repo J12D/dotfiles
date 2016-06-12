@@ -24,6 +24,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
 Bundle 'godlygeek/tabular'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'davidbeckingsale/writegood.vim'
 
 call vundle#end()
 filetype plugin indent on
