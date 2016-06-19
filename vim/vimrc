@@ -63,15 +63,17 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 set t_Co=256
 
+let g:airline#extensions#tabline#enabled = 1
+
 " Tagbar
 nmap <leader>. :TagbarToggle<CR>
 
 " Set Shell to bash so fugitive behaves nicely
 set shell=/bin/bash
 
-" Move easier between Tabs
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
+" Move easier between buffers
+map  <C-l> :bn<CR>
+map  <C-h> :bp<CR>
 
 " Leader maps
 let mapleader = ','
