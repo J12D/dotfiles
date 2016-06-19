@@ -91,6 +91,11 @@ let g:LatexBox_quickfix=4
 nmap <leader>li diwi\textit{<ESC>pi<Right>}
 nmap <leader>lb diwi\textbf{<ESC>pi<Right>}
 
+map <silent> <Leader>ls :silent
+        \ !/Applications/Skim.app/Contents/SharedSupport/displayline
+        \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
+        \ "%:p" <CR>
+
 " CtrlP
 map <C-I> :CtrlPLine<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
