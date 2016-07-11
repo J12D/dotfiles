@@ -101,12 +101,13 @@ function forcepull
     git reset --hard origin/master
 end
 
-set PATH /usr/texbin $PATH
-set PATH /usr/local/git/bin $PATH
+#set PATH /usr/texbin $PATH
+#set PATH /usr/local/git/bin $PATH
 set PATH /usr/local/sbin $PATH
 set PATH /usr/sbin $PATH
 set PATH /usr/local/bin $PATH
-set PATH $PATH $HOME/work/bin
+set PATH /usr/local/lib $PATH
+#set PATH $PATH $HOME/work/bin
 
 export GOPATH=$HOME/work
 
@@ -119,3 +120,7 @@ set LSCOLORS = cxfxcxdxbxegedabagacad
 set PS1 "$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 set fish_greeting ""
+if [ $TERM_PROGRAM = "iTerm.app" ] 
+  and test (echo $TERM_PROGRAM_VERSION | sed 's/\..*//') -ge 3 
+    source ~/.config/fish/iterm2_shell_integration.fish
+end
