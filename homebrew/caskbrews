@@ -1,0 +1,13 @@
+# install with brew cask
+# LaTeX distribution
+mactex
+# Vim
+macvim
+# Quick Look Plugins
+qlcolorcode
+qlmarkdown
+qlstephen
+# R Studio
+rstudio
+# Skim (PDF Viewer)
+skim
