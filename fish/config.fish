@@ -1,22 +1,5 @@
-function hiderootfiles
-    for i in *.root
-        mv $i .$i
-    end
-end
-
-function renamerootpdfs
-  for i in *-Ac*.pdf
-    mv $i (echo $i | sed 's/^.\{16\}//')
-  end
-end
-
 function cleanLaTeX
   rm {*.aux,*.synctex.gz,*.log}
-end
-
-function server
-    mosh j12d@dorado.uberspace.de -p 50804
-    #	ssh julian@new.j12d.de
 end
 
 # ssh as SOCKS proxy, 443 had to be dropped
@@ -28,21 +11,6 @@ end
 function closetunnel
   sudo networksetup -setsocksfirewallproxystate Ethernet off;
 	sudo networksetup -setsocksfirewallproxystate Wi-Fi off
-end
-
-#Netflix!
-#Networknames: networksetup -listnetworkserviceorder
-function usatunnel
-    if cat ~/dotfiles/fish/jdpw | sudo -S networksetup -setdnsservers "Wi-Fi" 208.122.23.22 208.122.23.23 > /dev/null
-        echo Changed DNS-Server to (cat ~/dotfiles/fish/jdpw | sudo -S networksetup -getdnsservers "Wi-Fi")
-    end
-    echo Activating new IP adress: (myip) &
-    curl -g (echo -n "https://api.unblock-us.com/login?" | cat - ~/dotfiles/fish/ub-us-pw)
-end
-function closeusatunnel
-    if cat ~/dotfiles/fish/jdpw | sudo -S networksetup -setdnsservers "Wi-Fi" empty;
-        echo Changed DNS-Server to router default
-    end
 end
 
 function ips
@@ -85,6 +53,8 @@ function git_cleanindex
   if git rev-parse
     find . -type f -name "* Konflikt*" -exec rm -f {} \;
     awk '!/Konflikt/' .git/packed-refs > temp & mv temp .git/packed-refs
+    find . -type f -name "* conflicted copy*" -exec rm -f {} \;
+    awk '!conflicted copy' .git/packed-refs > temp & mv temp .git/packed-refs
   end
 end
 
@@ -101,13 +71,14 @@ function forcepull
     git reset --hard origin/master
 end
 
-#set PATH /usr/texbin $PATH
-#set PATH /usr/local/git/bin $PATH
-set PATH /usr/local/sbin $PATH
-set PATH /usr/sbin $PATH
-set PATH /usr/local/bin $PATH
-set PATH /usr/local/lib $PATH
-#set PATH $PATH $HOME/work/bin
+function push_path
+  set PATH $argv $PATH
+end
+
+push_path /usr/local/sbin
+push_path /usr/sbin
+push_path /usr/local/bin
+push_path /usr/local/lib
 
 export GOPATH=$HOME/work
 
