@@ -57,12 +57,11 @@ install zsh/zshrc                          .zshrc
 install tmux/tmux.conf                     .tmux.conf
 install tmux/tmux                          .tmux
 
+green "Updating vim bundles ..."
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-else
-  green "Vundle already initialized"
 fi
-green "Updating vim bundles"
 vim +BundleInstall +qall
-#open ~/dotfiles/vim/Monaco_Linux-Powerline.ttf
+green "                     ... done."
+
 green "Don't forget to install the fonts in $ROOT/font"
