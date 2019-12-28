@@ -18,7 +18,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
+"Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'lervag/vimtex'
 Bundle 'tell-k/vim-autopep8'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
@@ -88,6 +89,13 @@ nmap <leader>gd :Gdiff<CR>
 let g:LatexBox_viewer='open -a Skim'
 let g:LatexBox_quickfix=4
 let g:LatexBox_latexmk_async=1
+
+" VimTeX
+" Disable latex-box shipped with polyglot
+let g:polyglot_disabled = ['latex'] 
+" Don't use continuous compilation
+let g:vimtex_compiler_latexmk = {'continous': 0}
+let g:vimtex_view_method = 'skim'
 
 nmap <leader>li diwi\textit{<ESC>pi<Right>}
 nmap <leader>lb diwi\textbf{<ESC>pi<Right>}
